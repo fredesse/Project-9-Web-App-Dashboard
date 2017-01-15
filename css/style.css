@@ -1,0 +1,236 @@
+/* GENERAL STYLING */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #fff;
+	color: black;
+}
+
+h1 {
+	margin: 0;
+}
+
+main {
+	text-align: center;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* HEADER STYLING */
+
+.main-header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	background-color: #8c7ded;
+	height: 6em;
+	padding-top: 1.6em;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #fff;
+}
+
+.nav-header {
+	background-color: #564f84;
+	height: 100%;
+	padding: 1em .5em;
+	z-index: 900;
+}
+
+.main-header-right {
+	width: 30%;
+	height: 80%;
+	text-align: right;
+}
+
+.main-header h1 {
+	font-size: 2.5em;
+}
+
+
+.main-header h1 span {
+	font-weight: 100;
+}
+
+.main-header img {
+	border-radius: 50%;
+	height: 100%;
+}
+
+.main-header img:hover {
+	border: 3px solid #fff;
+}
+
+.main-header:hover img {
+	cursor: pointer;
+}
+
+.header-img {
+	height: 100%;
+}
+
+.icon-list {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.icon-list li {
+	width: 20%;
+}
+
+.bell,
+.main-header p {
+	display: none;
+}
+
+.dropdown-content {
+	position: absolute;
+	display: none;
+	background-color: #ededf2;
+	z-index: 1000;
+	right: -14px;
+	margin: .9em;
+	border: 1px solid #b5b5b7;
+}
+
+.dropdown-content a {
+	display: block;
+	font-size: 2em;
+	padding: .45em 1em;
+	color: #848484;
+}
+
+.dropdown-content a:hover {
+	background-color: #8c7ded;
+	color: #fff;
+}
+
+.show {
+	display: block;
+}
+
+
+/* MAIN STYLING */
+
+#search {
+	background-color: #ededf2;
+	height: 6em;
+}
+
+#searchBar {
+	margin-top: 1.5em;
+	height: 40px;
+	width: 60%;
+	border-radius: 5px;
+	border: 1px solid #b5b5b7;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.dashboard-heading {
+	margin: 0 auto;
+	width: 60%;
+}
+
+.dashboard-heading h2 {
+	font-weight: 300;
+	color: #848484;
+}
+
+.hide {
+	display: none;
+}
+
+.alert {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	background-color: #8c7ded;
+	color: #fff;
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 2em;
+	border-radius: 3px;
+	text-align: left;
+	padding: 5px 10px 5px 15px;
+	font-weight: 200;
+	letter-spacing: 1.1px;
+	height: 100%;
+	margin-bottom: 2em;
+}
+
+.alert p {
+	font-size: .8em;
+}
+
+.alert span {
+	font-weight: 700;
+	margin-right: 10px;
+}
+
+.alert a {
+	font-style: italic;
+	color: #fff;
+	font-weight: 500;
+	text-decoration: underline;
+}
+
+.alert img {
+	height: 32px;
+	width: 32px;
+	margin-top: 5px;
+	margin-left: 10px;
+}
+
+.alert img {
+	cursor: pointer;
+}
+
+.dashboard-heading,
+.traffic,
+.daily-traffic,
+.mobile-users,
+.social-stats,
+.new-members,
+.recent-activity,
+.message-user {
+	border-bottom: 1px solid #b5b5b7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
