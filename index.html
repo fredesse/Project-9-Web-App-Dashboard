@@ -11,7 +11,7 @@
 		<header>
 			<div class="main-header">
 				<div>
-					<h1>Your<span>App<span class="tm">&trade;</span></span></h1>
+					<h1><a href="#">Your<span>App<span class="tm">&trade;</span></span></a></h1>
 				</div>
 				<div class="main-header-right">
 					<div class="bell">
@@ -153,9 +153,24 @@
 					<img src="icons/delete.png" alt="" id="alert-delete">
 				</div>
 			</div>	
-			<div class="traffic"></div>
-			<div class="daily-traffic"></div>
-			<div class="mobile-users"></div>
+			<div class="traffic">
+				<div>
+					<h3>Traffic</h3>
+				</div>
+				<div class="traffic-duration">
+					<h4 id="hourly">Hourly</h4>
+					<h4 id="daily">Daily</h4>
+					<h4 id="weekly">Weekly</h4>
+					<h4 id="monthly">Monthly</h4>
+				</div>
+				<canvas id="traffic"></canvas>
+			</div>
+			<div class="daily-traffic">
+				<canvas id="daily-traffic"></canvas>
+			</div>
+			<div class="mobile-users">
+				<canvas id="mobile-users"></canvas>
+			</div>
 			<div class="social-stats"></div>
 			<div class="new-members"></div>
 			<div class="recent-activity"></div>
@@ -164,6 +179,9 @@
 		</main>
 		
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 		<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/charts.js" type="text/javascript" charset="utf-8"></script>
+		
 	</body>
 </html>
