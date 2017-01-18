@@ -224,8 +224,12 @@ a {
 	padding: 25px 5%;
 }
 
-.traffic h3 {
-	margin-bottom: 0;
+.widget-headline {
+	margin-bottom: 1em;
+	margin-top: 0;
+	color: #848484;
+	text-transform: uppercase;
+	font-weight: 400;
 }
 
 .traffic-duration {
@@ -247,16 +251,61 @@ a {
 	border-radius: 20px;
 }
 
+/* SOCIAL WIDGET STYLING */
 
+.social-widgets {
+	display: flex;
+	flex-direction: column;
+}
 
+.social-p {
+	color: #8c7ded;
+	margin-top: 5px;
+	margin-bottom: 0;
+}
 
+.social-icon {
+	display: flex;
+	flex-direction: row;
+	background-color: #ededf2;
+	border: 1px solid #b5b5b7;
+	border-radius: 5px;
+	height: 6em;
+	padding-top: 1em;
+	padding-left: 1em;
+	margin-bottom: 2em;
+}
 
+.icon-sizing {
+	background-color: #8c7ded;
+	border-radius: 50%;
+	height: 4em;
+	width: 4em;
+}
 
+.icon-sizing object {
+	height: 49%;
+	margin-top: 19px;
+}
 
+#fb object {
+	margin-top: 15px;
+}
 
+.name-number {
+	display: flex;
+	flex-direction: column;
+	margin-left: 1em;
+	text-align: left;
+}
 
-
-
+.social-number {
+	margin-top: 0;
+	font-size: 2.5em;
+	font-weight: 200;
+	color: #848484;
+	letter-spacing: 2px;
+}
 
 
 

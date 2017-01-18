@@ -155,7 +155,7 @@
 			</div>	
 			<div class="traffic">
 				<div>
-					<h3>Traffic</h3>
+					<h3 class="widget-headline">Traffic</h3>
 				</div>
 				<div class="traffic-duration">
 					<h4 id="hourly">Hourly</h4>
@@ -163,19 +163,80 @@
 					<h4 id="weekly">Weekly</h4>
 					<h4 id="monthly">Monthly</h4>
 				</div>
-				<canvas id="traffic"></canvas>
+				<canvas id="traffic-h"></canvas>
+				<canvas id="traffic-d"></canvas>
+				<canvas id="traffic-w"></canvas>
+				<canvas id="traffic-m"></canvas>
 			</div>
 			<div class="daily-traffic">
+				<div>
+					<h3 class="widget-headline">Daily Traffic</h3>
+				</div>
 				<canvas id="daily-traffic"></canvas>
 			</div>
 			<div class="mobile-users">
+				<div>
+					<h3 class="widget-headline">Mobile users</h3>
+				</div>
 				<canvas id="mobile-users"></canvas>
 			</div>
-			<div class="social-stats"></div>
-			<div class="new-members"></div>
-			<div class="recent-activity"></div>
-			<div class="message-user"></div>
-			<div class="settings"></div>
+			<div class="social-stats">
+				<div>
+					<h3 class="widget-headline">Social stats</h3>
+				</div>
+				<div class="social-widgets">
+					<div class="social-icon">
+						<div class="icon-sizing">
+							<object type="image/svg+xml" data="icons/icon-twitter.svg">
+								Twitter
+							</object>
+						</div>
+						<div id="twitter" class="name-number">
+							<p class="social-p">Twitter</p>
+						</div>
+					</div>
+					<div class="social-icon">
+						<div class="icon-sizing" id="fb">
+							<object type="image/svg+xml" data="icons/icon-facebook.svg">
+								Facebook
+							</object>
+						</div>
+						<div id="facebook" class="name-number">
+							<p class="social-p">Facebook</p>
+						</div>
+					</div>
+					<div class="social-icon">
+						<div class="icon-sizing">
+							<object type="image/svg+xml" data="icons/icon-google.svg">
+								Google
+							</object>
+						</div>
+						<div id="google" class="name-number">
+							<p class="social-p">Google</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="new-members">
+				<div>
+					<h3 class="widget-headline">New members</h3>
+				</div>
+			</div>
+			<div class="recent-activity">
+				<div>
+					<h3 class="widget-headline">Recent activity</h3>
+				</div>
+			</div>
+			<div class="message-user">
+				<div>
+					<h3 class="widget-headline">Message users</h3>
+				</div>
+			</div>
+			<div class="settings">
+				<div>
+					<h3 class="widget-headline">Settings</h3>
+				</div>
+			</div>
 		</main>
 		
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
