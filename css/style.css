@@ -307,8 +307,19 @@ a {
 	letter-spacing: 2px;
 }
 
+/* MEMBERS STYLING */
 
+.flex-layout {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
 
+#message-user {
+	display: flex;
+	flex-direction: column;
+}
 
 
 
