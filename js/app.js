@@ -71,7 +71,7 @@ function randomNumberFb() {
 };
 
 function randomNumberG() {
-	const randomNumber2 = Math.floor(Math.random() * 11); // Number for Google (cause no-body uses G+)
+	const randomNumber2 = Math.floor(Math.random() * 11); // Number for Google (let's be honest, nobody uses G+)
     const paragraphG = document.createElement("p");
     paragraphG.className = "social-number";
     paragraphG.textContent = randomNumber2;
@@ -88,13 +88,17 @@ function firstNewMember() {
 	const pName = document.createElement("p");
 	pName.textContent = newMemberData[0][1];
 
-	const pEmail = document.createElement("p");
-	pEmail.textContent = newMemberData[0][2];
+	const pEmail = document.createElement("a");
+	const eMail = newMemberData[0][2];
+	pEmail.textContent = eMail;
+	pEmail.href = 'mailto' + eMail;
+	nameParent.className = "member-info";
 	nameParent.appendChild(pName);
 	nameParent.appendChild(pEmail);
 
 	const dateParent = document.getElementById("nm-date-1");
 	const pDate = document.createElement("p");
+	pDate.className = "date-color";
 	pDate.textContent = newMemberData[0][3];
 	dateParent.appendChild(pDate);
 };
@@ -109,13 +113,17 @@ function secondNewMember() {
 	const pName = document.createElement("p");
 	pName.textContent = newMemberData[1][1];
 
-	const pEmail = document.createElement("p");
-	pEmail.textContent = newMemberData[1][2];
+	const pEmail = document.createElement("a");
+	const eMail = newMemberData[1][2];
+	pEmail.textContent = eMail;
+	pEmail.href = 'mailto' + eMail;
+	nameParent.className = "member-info";
 	nameParent.appendChild(pName);
 	nameParent.appendChild(pEmail);
 
 	const dateParent = document.getElementById("nm-date-2");
 	const pDate = document.createElement("p");
+	pDate.className = "date-color";
 	pDate.textContent = newMemberData[1][3];
 	dateParent.appendChild(pDate);
 }
@@ -130,13 +138,17 @@ function thirdNewMember() {
 	const pName = document.createElement("p");
 	pName.textContent = newMemberData[2][1];
 
-	const pEmail = document.createElement("p");
-	pEmail.textContent = newMemberData[2][2];
+	const pEmail = document.createElement("a");
+	const eMail = newMemberData[2][2];
+	pEmail.textContent = eMail;
+	pEmail.href = 'mailto' + eMail;
+	nameParent.className = "member-info";
 	nameParent.appendChild(pName);
 	nameParent.appendChild(pEmail);
 
 	const dateParent = document.getElementById("nm-date-3");
 	const pDate = document.createElement("p");
+	pDate.className = "date-color";
 	pDate.textContent = newMemberData[2][3];
 	dateParent.appendChild(pDate);
 };
@@ -151,13 +163,17 @@ function fourthNewMember() {
 	const pName = document.createElement("p");
 	pName.textContent = newMemberData[3][1];
 
-	const pEmail = document.createElement("p");
-	pEmail.textContent = newMemberData[3][2];
+	const pEmail = document.createElement("a");
+	const eMail = newMemberData[3][2];
+	pEmail.textContent = eMail;
+	pEmail.href = 'mailto' + eMail;
+	nameParent.className = "member-info";
 	nameParent.appendChild(pName);
 	nameParent.appendChild(pEmail);
 
 	const dateParent = document.getElementById("nm-date-4");
 	const pDate = document.createElement("p");
+	pDate.className = "date-color";
 	pDate.textContent = newMemberData[3][3];
 	dateParent.appendChild(pDate);
 };
@@ -179,6 +195,7 @@ function firstRecentActivity() {
     const p2 = document.createElement("p");
     const timeAgo = recentActivityData[2][3] + ' ' + recentActivityData[3][1] + ' ago';
     p2.textContent = timeAgo;
+	contentParent.className = "member-info";
     contentParent.appendChild(p2);
 };
 
@@ -199,6 +216,7 @@ function secondRecentActivity() {
     const p2 = document.createElement("p");
     const timeAgo = recentActivityData[2][4] + ' ' + recentActivityData[3][1] + ' ago';
     p2.textContent = timeAgo;
+	contentParent.className = "member-info";
     contentParent.appendChild(p2);
 };
 
@@ -219,6 +237,7 @@ function thirdRecentActivity() {
     const p2 = document.createElement("p");
     const timeAgo = recentActivityData[2][4] + ' ' + recentActivityData[3][1] + ' ago';
     p2.textContent = timeAgo;
+	contentParent.className = "member-info";
     contentParent.appendChild(p2);
 };
 
@@ -239,6 +258,7 @@ function fourthRecentActivity() {
     const p2 = document.createElement("p");
     const timeAgo = recentActivityData[2][0] + ' ' + recentActivityData[3][2] + ' ago';
     p2.textContent = timeAgo;
+	contentParent.className = "member-info";
     contentParent.appendChild(p2);
 };
 
@@ -296,30 +316,39 @@ messageUser.appendChild(searchUser);
 
 // Text area input field
 const writeToUser = document.createElement("textarea");
+writeToUser.setAttribute("id", "text-user");
 writeToUser.setAttribute("name", "textarea");
 writeToUser.setAttribute("placeholder", "Message for User");
 messageUser.appendChild(writeToUser);
 
 // Send button 
 const sendBtn = document.createElement("button");
+sendBtn.className = "send-btn";
 sendBtn.setAttribute("type", "submit");
 sendBtn.textContent = "Send";
 messageUser.appendChild(sendBtn);
 
-
 sendBtn.addEventListener("click", (e) => {
-	messageUser.parentNode.removeChild(messageUser);
-	const messageSent = document.getElementById("testing");
-	const div = document.createElement("div");
-	const successMessage = document.createElement("p");
-	successMessage.textContent = "Your message was sent!";
-	div.appendChild(successMessage);
-	messageSent.appendChild(div);
+	const nameInput = document.getElementById("search-user").value;
+	const textInput = document.getElementById("text-user").value;
+
+	if (nameInput == "" || textInput == "") {
+		const getParent = document.getElementById("message-user");
+		const errorMsg = document.createElement("p");
+		errorMsg.className = "error";
+		errorMsg.textContent = "Hold on there! You have to fill in both the name and message.";
+		getParent.appendChild(errorMsg);
+	} else {
+		messageUser.parentNode.removeChild(messageUser);
+		const messageSent = document.getElementById("message-parent");
+		const div = document.createElement("div");
+		const successMessage = document.createElement("p");
+		successMessage.className = "message-sent";
+		successMessage.textContent = "Your message was sent!";
+		div.appendChild(successMessage);
+		messageSent.appendChild(div);
+	}
 });
-
-
-
-
 
 
 

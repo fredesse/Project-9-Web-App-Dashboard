@@ -287,7 +287,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="message-user" id="testing">
+			<div class="message-user" id="message-parent">
 				<div>
 					<h3 class="widget-headline">Message users</h3>
 				</div>
@@ -297,21 +297,28 @@
 				<div>
 					<h3 class="widget-headline">Settings</h3>
 				</div>
-				<div>
+				<div class="toggle-btns">
 					<p>Send Email Notifications</p>
-					<label class="switch">
-						<input type="checkbox" name="notifications">
-						<div class="slider" id="onoff" data-onoff="on">Off</div>
-					</label>
+					<div class="onoffswitch">
+					    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+					    <label class="onoffswitch-label" for="myonoffswitch">
+					        <span class="onoffswitch-inner"></span>
+					        <span class="onoffswitch-switch"></span>
+					    </label>
+					</div>
 				</div>
-				<div>
+				<div class="toggle-btns">
 					<p>Set Profile to Public</p>
-					<label class="switch">
-						<input type="checkbox" name="notifications">
-						<div class="slider" id="onoff" data-onoff="on">Off</div>
-					</label>
+					<div class="onoffswitch">
+					    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch1" checked>
+					    <label class="onoffswitch-label" for="myonoffswitch1">
+					        <span class="onoffswitch-inner"></span>
+					        <span class="onoffswitch-switch"></span>
+					    </label>
+					</div>
 				</div>
 				<select name="DropDownTimezone" id="DropDownTimezone">
+					  <option value="" disabled selected hidden>Select Timezone</option>
 				      <option value="-12.0">(GMT -12:00) Eniwetok, Kwajalein</option>
 				      <option value="-11.0">(GMT -11:00) Midway Island, Samoa</option>
 				      <option value="-10.0">(GMT -10:00) Hawaii</option>
@@ -344,9 +351,9 @@
 				      <option value="11.0">(GMT +11:00) Magadan, Solomon Islands, New Caledonia</option>
 				      <option value="12.0">(GMT +12:00) Auckland, Wellington, Fiji, Kamchatka</option>
 				</select>
-				<div>
-					<button type="submit">Save</button>
-					<button type="submit">Cancel</button>
+				<div class="submit-btns">
+					<button type="submit" class="save-btn">Save</button>
+					<button type="submit" class="cancel-btn">Cancel</button>
 				</div>
 			</div>
 		</main>
