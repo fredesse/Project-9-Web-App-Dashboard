@@ -54,6 +54,13 @@ textarea:focus {
   outline: 0;
 }
 
+.ui-menu-item:hover,
+.main-header:hover img,
+.alert img,
+.recent-activity .member-info:hover {
+	cursor: pointer;
+}
+
 /* HEADER STYLING */
 
 .main-header {
@@ -101,10 +108,6 @@ textarea:focus {
 
 .main-header img:hover {
 	border: 3px solid #fff;
-}
-
-.main-header:hover img {
-	cursor: pointer;
 }
 
 .header-img {
@@ -223,10 +226,6 @@ textarea:focus {
 	width: 32px;
 	margin-top: 5px;
 	margin-left: 10px;
-}
-
-.alert img {
-	cursor: pointer;
 }
 
 .dashboard-heading,
@@ -365,10 +364,6 @@ textarea:focus {
 	margin-left: 1em;
 }
 
-.recent-activity .member-info:hover {
-	cursor: pointer;
-}
-
 .nm-list:nth-child(-n+3),
 .ra-list:nth-child(-n+3) {
 	border-bottom: 1px solid #b5b5b7;
@@ -472,6 +467,22 @@ textarea:focus {
 	color: #848484;
 	font-style: italic;
 	margin-top: 2em;
+}
+
+/* AUTOCOMPLETE STYLING */
+.ui-menu {
+	background-color: #fff;
+	border: 1px solid #b5b5b7;
+	border-radius: 5px;
+	margin-right: 5%;
+	padding: 10px 15px;
+	color: #848484;
+	width: 40%;
+}
+
+.ui-menu-item {
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 /* STYLING FOR TOGGLE BUTTONS */

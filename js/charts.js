@@ -117,29 +117,32 @@
 
 // Bar chart
 var dailyTraffic = document.getElementById("daily-traffic").getContext("2d");
-var barChart = new Chart(dailyTraffic, {
-    type: 'bar',
-    data: {
-        labels: ["S", "M", "T", "W", "T", "F", "S"],
-        datasets: [{
-            data: [50, 75, 150, 100, 200, 175, 75],
-            backgroundColor: [
-                '#8c7ded',
-                '#8c7ded',
-                '#8c7ded',
-                '#8c7ded',
-                '#8c7ded',
-                '#8c7ded',
-                '#8c7ded'
-            ],
-            cornerRadius: 10,
-        }]
-    },
-    options: {
-        legend: {
-            display: false
+var data = {
+  labels: ["S", "M", "T", "W", "T", "F", "S"],
+  datasets: [{
+    label: "Desktop",
+    backgroundColor: "#8c7ded",
+    data: [60, 75, 150, 100, 200, 175, 75]
+  }, {
+    label: "Mobile",
+    backgroundColor: "#8abbd1",
+    data: [70, 65, 140, 110, 210, 165, 75]
+  }]
+};
+
+var myBarChart = new Chart(dailyTraffic, {
+  type: 'bar',
+  data: data,
+  options: {
+    barValueSpacing: 20,
+    scales: {
+      yAxes: [{
+        ticks: {
+          min: 0,
         }
+      }]
     }
+  }
 });
 
 // Doughnut (mmmmmmmm...) chart
@@ -147,10 +150,9 @@ var mobileUsers = document.getElementById("mobile-users").getContext("2d");
 var doughnutChart = new Chart(mobileUsers, {
 	type: 'doughnut',
 	data: {
-        labels: ["Desktop", "Tablets", "Phones"],
+        labels: ["Desktop", "Tablets", "Phones", "Other"],
         datasets: [{
-            label: '# of Votes',
-            data: [65, 18, 17],
+            data: [55, 20, 15, 10],
             backgroundColor: [
                 '#8c7ded',
                 '#8ad199',

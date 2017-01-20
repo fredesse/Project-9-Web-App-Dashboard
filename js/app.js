@@ -12,10 +12,6 @@ const dailyBtn = document.getElementById("daily");
 const weeklyBtn = document.getElementById("weekly");
 const monthlyBtn = document.getElementById("monthly");
 
-const twitterNumber = document.getElementById("twitter");
-const facebookNumber = document.getElementById("facebook");
-const googleNumber = document.getElementById("google");
-
 const image = document.createElement("img");
 const pName = document.createElement("p");
 const pEmail = document.createElement("p");
@@ -42,6 +38,8 @@ window.onload = function() {
     randomNumberT();
     randomNumberFb();
 	randomNumberG();
+	randomNumberSnap();
+	randomNumberPint();
 	//For new members
     firstNewMember();
     secondNewMember();
@@ -56,6 +54,7 @@ window.onload = function() {
 
 function randomNumberT() {
 	const randomNumber = Math.floor(Math.random() * 11000);	// Number for Twitter
+	const twitterNumber = document.getElementById("twitter");
     const paragraphT = document.createElement("p");
     paragraphT.className = "social-number";
     paragraphT.textContent = randomNumber;
@@ -64,6 +63,7 @@ function randomNumberT() {
 
 function randomNumberFb() {
 	const randomNumber1 = Math.floor(Math.random() * 11000); // Number for Facebook
+	const facebookNumber = document.getElementById("facebook");
     const paragraphFb = document.createElement("p");
     paragraphFb.className = "social-number";
     paragraphFb.textContent = randomNumber1;
@@ -72,10 +72,29 @@ function randomNumberFb() {
 
 function randomNumberG() {
 	const randomNumber2 = Math.floor(Math.random() * 11); // Number for Google (let's be honest, nobody uses G+)
+	const googleNumber = document.getElementById("google");
     const paragraphG = document.createElement("p");
     paragraphG.className = "social-number";
     paragraphG.textContent = randomNumber2;
     googleNumber.appendChild(paragraphG);
+};
+
+function randomNumberSnap() {
+	const randomNumber3 = Math.floor(Math.random() * 11000); // Number for Snapchat
+	const snapNumber = document.getElementById("snapchat");	
+    const paragraphSnap = document.createElement("p");
+    paragraphSnap.className = "social-number";
+    paragraphSnap.textContent = randomNumber3;
+    snapNumber.appendChild(paragraphSnap);
+};
+
+function randomNumberPint() {
+	const randomNumber4 = Math.floor(Math.random() * 11000); // Number for Snapchat
+	const pintNumber = document.getElementById("pinterest");	
+    const paragraphPint = document.createElement("p");
+    paragraphPint.className = "social-number";
+    paragraphPint.textContent = randomNumber4;
+    pintNumber.appendChild(paragraphPint);
 };
 
 function firstNewMember() {
@@ -305,7 +324,6 @@ monthlyBtn.addEventListener("click", (e) => {
 	showTrafficMonth.style.display = "block";
 });
 
-
 // Search input field
 const messageUser = document.getElementById("message-user");
 const searchUser = document.createElement("input");
@@ -313,6 +331,27 @@ searchUser.setAttribute("id", "search-user");
 searchUser.setAttribute("type", "search");
 searchUser.setAttribute("placeholder", "Search for User");
 messageUser.appendChild(searchUser);
+
+// Search autocomplete
+$(function() {
+	const availableTags = [
+      	[newMemberData[0][1]].toString(),
+		[newMemberData[1][1]].toString(),
+		[newMemberData[2][1]].toString(),
+		[newMemberData[3][1]].toString()
+    ];
+
+/*	const memberNames = [
+	[newMemberData[0][1]],
+	[newMemberData[1][1]],
+	[newMemberData[2][1]],
+	[newMemberData[3][1]],
+	];*/
+	$("#search-user").autocomplete({
+	source: availableTags
+	});
+});
+
 
 // Text area input field
 const writeToUser = document.createElement("textarea");
