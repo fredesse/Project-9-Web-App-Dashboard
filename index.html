@@ -14,11 +14,11 @@
 					<h1><a href="#">Your<span>App<span class="tm">&trade;</span></span></a></h1>
 				</div>
 				<div class="main-header-right">
-					<div class="bell">
+					<!-- <div class="bell">
 						<a href="#">
 							<?xml version="1.0" encoding="utf-8"?>
-							<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+							<! Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+							<!-- <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 								 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
 								<style type="text/css">
 									.st0{fill:#FFFFFF;}
@@ -31,21 +31,25 @@
 								</g>
 							</svg>
 						</a>
-					</div>
+					</div> -->
 					<div class="header-img" id="avatar">
 						<img src="img/avatar1.png" alt="Picture of Fredy Esse">
+						<div class="notif notif-no"></div>
 					</div>
 					<div id="dropdown" class="dropdown-content">
-						<a href="#">Notifications <span>(2)</span></a>
+						<a href="#">Notifications <span class="notif-no"></span></a>
+						<a href="#">Profile</a>
+						<a href="#">Billing</a>
 						<a href="#">Settings</a>
 						<a href="#">Log out</a>
 					</div>
-					<p>Fredy Esse</p>
 				</div>
 			</div>
+		</header>
+		<div class="wrapper">
 			<nav class="nav-header">
 				<ul class="icon-list">
-					<li>
+					<li id="active-nav">
 						<a href="#">
 							<?xml version="1.0" encoding="utf-8"?>
 							<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
@@ -139,245 +143,250 @@
 					</li>
 				</ul>
 			</nav>
-		</header>
-		<main>
-			<div id="search">
-				<input id="searchBar" type="search" placeholder="Search...">
-			</div>
-			<div class="dashboard-heading">
-				<h2>Dashboard</h2>
-			</div>
-			<div class="hide">
-				<div class="alert" id="alert">
-					<p><span>Alert </span>You have unpaid bills. Don't make us do <a href="https://www.youtube.com/watch?v=TruXhuAO4IY" target="_blank">THIS</a> to you.</p>
-					<img src="icons/delete.png" alt="" id="alert-delete">
-				</div>
-			</div>	
-			<div class="traffic">
-				<div>
-					<h3 class="widget-headline">Traffic</h3>
-				</div>
-				<div class="traffic-duration">
-					<h4 id="hourly">Hourly</h4>
-					<h4 id="daily">Daily</h4>
-					<h4 id="weekly">Weekly</h4>
-					<h4 id="monthly">Monthly</h4>
-				</div>
-				<canvas id="traffic-h"></canvas>
-				<canvas id="traffic-d"></canvas>
-				<canvas id="traffic-w"></canvas>
-				<canvas id="traffic-m"></canvas>
-			</div>
-			<div class="daily-traffic">
-				<div>
-					<h3 class="widget-headline">Daily Traffic</h3>
-				</div>
-				<canvas id="daily-traffic"></canvas>
-			</div>
-			<div class="mobile-users">
-				<div>
-					<h3 class="widget-headline">Mobile users</h3>
-				</div>
-				<canvas id="mobile-users"></canvas>
-			</div>
-			<div class="social-stats">
-				<div>
-					<h3 class="widget-headline">Social stats</h3>
-				</div>
-				<div class="social-widgets">
-					<div class="social-icon">
-						<div class="icon-sizing">
-							<object type="image/svg+xml" data="icons/icon-twitter.svg">
-								Twitter
-							</object>
-						</div>
-						<div id="twitter" class="name-number">
-							<p class="social-p">Twitter</p>
-						</div>
+			<main class="main">
+				<div class="flex-heading">
+					<div id="search">
+						<input id="searchBar" type="search" placeholder="Search...">
 					</div>
-					<div class="social-icon">
-						<div class="icon-sizing" id="fb">
-							<object type="image/svg+xml" data="icons/icon-facebook.svg">
-								Facebook
-							</object>
-						</div>
-						<div id="facebook" class="name-number">
-							<p class="social-p">Facebook</p>
-						</div>
-					</div>
-					<div class="social-icon">
-						<div class="icon-sizing">
-							<object type="image/svg+xml" data="icons/icon-google.svg">
-								Google
-							</object>
-						</div>
-						<div id="google" class="name-number">
-							<p class="social-p">Google</p>
-						</div>
-					</div>
-					<div class="social-icon">
-						<div class="icon-sizing">
-							<object type="image/svg+xml" data="icons/snapchat.svg">
-								Snapchat
-							</object>
-						</div>
-						<div id="snapchat" class="name-number">
-							<p class="social-p">Snapchat</p>
-						</div>
-					</div>
-					<div class="social-icon">
-						<div class="icon-sizing">
-							<object type="image/svg+xml" data="icons/pinterest.svg">
-								Pinterest
-							</object>
-						</div>
-						<div id="pinterest" class="name-number">
-							<p class="social-p">Pinterest</p>
-						</div>
+					<div class="dashboard-heading">
+						<h2>Dashboard</h2>
 					</div>
 				</div>
-			</div>
-			<div class="new-members">
-				<div>
-					<h3 class="widget-headline">New members</h3>
-				</div>
-				<div class="flex-layout">
-					<div class="nm-list">
-						<div>
-							<div id="nm-img-1"></div>
-						</div>
-						<div id="nm-info-1"></div>
-						<div id="nm-date-1"></div>
-					</div>
-					<div class="nm-list">
-						<div>
-							<div id="nm-img-2"></div>
-						</div>
-						<div id="nm-info-2"></div>
-						<div id="nm-date-2"></div>
-					</div>
-					<div class="nm-list">
-						<div>
-							<div id="nm-img-3"></div>
-						</div>
-						<div id="nm-info-3"></div>
-						<div id="nm-date-3"></div>
-					</div>
-					<div class="nm-list">
-						<div>
-							<div id="nm-img-4"></div>
-						</div>
-						<div id="nm-info-4"></div>
-						<div id="nm-date-4"></div>
+				<div class="hide">
+					<div class="alert" id="alert">
+						<p><span>Alert </span>You have unpaid bills. Don't make us do <a href="https://www.youtube.com/watch?v=TruXhuAO4IY" target="_blank">THIS</a> to you.</p>
+						<img src="icons/delete.png" alt="" id="alert-delete">
 					</div>
 				</div>	
-			</div>
-			<div class="recent-activity">
-				<div>
-					<h3 class="widget-headline">Recent activity</h3>
-				</div>
-				<div class="flex-layout">
-					<div class="ra-list">
+				<div class="traffic">
+					<div class="flex-traffic">
 						<div>
-							<div id="ra-img-1"></div>
+							<h3 class="widget-headline">Traffic</h3>
 						</div>
-						<div id="ra-info-1"></div>
-						<div class="forward"></div>
-					</div>
-					<div class="ra-list">
+						<div class="traffic-duration">
+							<h4 id="hourly">Hourly</h4>
+							<h4 id="daily">Daily</h4>
+							<h4 id="weekly">Weekly</h4>
+							<h4 id="monthly">Monthly</h4>
+						</div>
+					</div>	
+					<canvas id="traffic-h"></canvas>
+					<canvas id="traffic-d"></canvas>
+					<canvas id="traffic-w"></canvas>
+					<canvas id="traffic-m"></canvas>
+				</div>
+				<div class="col-2">
+					<div class="daily-traffic">
 						<div>
-							<div id="ra-img-2"></div>
+							<h3 class="widget-headline">Daily Traffic</h3>
 						</div>
-						<div id="ra-info-2"></div>
-						<div class="forward"></div>
+						<canvas id="daily-traffic"></canvas>
 					</div>
-					<div class="ra-list">
+					<div class="mobile-users">
 						<div>
-							<div id="ra-img-3"></div>
+							<h3 class="widget-headline">Mobile users</h3>
 						</div>
-						<div id="ra-info-3"></div>
-						<div class="forward"></div>
+						<canvas id="mobile-users"></canvas>
 					</div>
-					<div class="ra-list">
-						<div>
-							<div id="ra-img-4"></div>
+				</div>	
+				<div class="social-stats">
+					<div>
+						<h3 class="widget-headline">Social stats</h3>
+					</div>
+					<div class="social-widgets">
+						<div class="social-icon">
+							<div class="icon-sizing">
+								<object type="image/svg+xml" data="icons/icon-twitter.svg">
+									Twitter
+								</object>
+							</div>
+							<div id="twitter" class="name-number">
+								<p class="social-p">Twitter</p>
+							</div>
 						</div>
-						<div id="ra-info-4"></div>
-						<div class="forward"></div>
+						<div class="social-icon">
+							<div class="icon-sizing" id="fb">
+								<object type="image/svg+xml" data="icons/icon-facebook.svg">
+									Facebook
+								</object>
+							</div>
+							<div id="facebook" class="name-number">
+								<p class="social-p">Facebook</p>
+							</div>
+						</div>
+						<div class="social-icon">
+							<div class="icon-sizing">
+								<object type="image/svg+xml" data="icons/icon-google.svg">
+									Google
+								</object>
+							</div>
+							<div id="google" class="name-number">
+								<p class="social-p">Google</p>
+							</div>
+						</div>
+						<div class="social-icon">
+							<div class="icon-sizing">
+								<object type="image/svg+xml" data="icons/snapchat.svg">
+									Snapchat
+								</object>
+							</div>
+							<div id="snapchat" class="name-number">
+								<p class="social-p">Snapchat</p>
+							</div>
+						</div>
+						<div class="social-icon">
+							<div class="icon-sizing">
+								<object type="image/svg+xml" data="icons/pinterest.svg">
+									Pinterest
+								</object>
+							</div>
+							<div id="pinterest" class="name-number">
+								<p class="social-p">Pinterest</p>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="message-user" id="message-parent">
-				<div>
-					<h3 class="widget-headline">Message users</h3>
+				<div class="new-members">
+					<div>
+						<h3 class="widget-headline">New members</h3>
+					</div>
+					<div class="flex-layout">
+						<div class="nm-list">
+							<div>
+								<div id="nm-img-1"></div>
+							</div>
+							<div id="nm-info-1"></div>
+							<div id="nm-date-1"></div>
+						</div>
+						<div class="nm-list">
+							<div>
+								<div id="nm-img-2"></div>
+							</div>
+							<div id="nm-info-2"></div>
+							<div id="nm-date-2"></div>
+						</div>
+						<div class="nm-list">
+							<div>
+								<div id="nm-img-3"></div>
+							</div>
+							<div id="nm-info-3"></div>
+							<div id="nm-date-3"></div>
+						</div>
+						<div class="nm-list">
+							<div>
+								<div id="nm-img-4"></div>
+							</div>
+							<div id="nm-info-4"></div>
+							<div id="nm-date-4"></div>
+						</div>
+					</div>	
 				</div>
-				<div id="message-user"></div>
-			</div>
-			<div class="settings">
-				<div>
-					<h3 class="widget-headline">Settings</h3>
-				</div>
-				<div class="toggle-btns">
-					<p>Send Email Notifications</p>
-					<div class="onoffswitch">
-					    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-					    <label class="onoffswitch-label" for="myonoffswitch">
-					        <span class="onoffswitch-inner"></span>
-					        <span class="onoffswitch-switch"></span>
-					    </label>
+				<div class="recent-activity">
+					<div>
+						<h3 class="widget-headline">Recent activity</h3>
+					</div>
+					<div class="flex-layout">
+						<div class="ra-list">
+							<div>
+								<div id="ra-img-1"></div>
+							</div>
+							<div id="ra-info-1"></div>
+							<div class="forward"></div>
+						</div>
+						<div class="ra-list">
+							<div>
+								<div id="ra-img-2"></div>
+							</div>
+							<div id="ra-info-2"></div>
+							<div class="forward"></div>
+						</div>
+						<div class="ra-list">
+							<div>
+								<div id="ra-img-3"></div>
+							</div>
+							<div id="ra-info-3"></div>
+							<div class="forward"></div>
+						</div>
+						<div class="ra-list">
+							<div>
+								<div id="ra-img-4"></div>
+							</div>
+							<div id="ra-info-4"></div>
+							<div class="forward"></div>
+						</div>
 					</div>
 				</div>
-				<div class="toggle-btns">
-					<p>Set Profile to Public</p>
-					<div class="onoffswitch">
-					    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch1" checked>
-					    <label class="onoffswitch-label" for="myonoffswitch1">
-					        <span class="onoffswitch-inner"></span>
-					        <span class="onoffswitch-switch"></span>
-					    </label>
+				<div class="message-user" id="message-parent">
+					<div>
+						<h3 class="widget-headline">Message users</h3>
+					</div>
+					<div id="message-user"></div>
+				</div>
+				<div class="settings">
+					<div>
+						<h3 class="widget-headline">Settings</h3>
+					</div>
+					<div class="toggle-btns">
+						<p>Send Email Notifications</p>
+						<div class="onoffswitch">
+						    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+						    <label class="onoffswitch-label" for="myonoffswitch">
+						        <span class="onoffswitch-inner"></span>
+						        <span class="onoffswitch-switch"></span>
+						    </label>
+						</div>
+					</div>
+					<div class="toggle-btns">
+						<p>Set Profile to Public</p>
+						<div class="onoffswitch">
+						    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch1" checked>
+						    <label class="onoffswitch-label" for="myonoffswitch1">
+						        <span class="onoffswitch-inner"></span>
+						        <span class="onoffswitch-switch"></span>
+						    </label>
+						</div>
+					</div>
+					<select name="DropDownTimezone" id="DropDownTimezone">
+						  <option value="" disabled selected hidden>Select Timezone</option>
+					      <option value="-12.0">(GMT -12:00) Eniwetok, Kwajalein</option>
+					      <option value="-11.0">(GMT -11:00) Midway Island, Samoa</option>
+					      <option value="-10.0">(GMT -10:00) Hawaii</option>
+					      <option value="-9.0">(GMT -9:00) Alaska</option>
+					      <option value="-8.0">(GMT -8:00) Pacific Time (US &amp; Canada)</option>
+					      <option value="-7.0">(GMT -7:00) Mountain Time (US &amp; Canada)</option>
+					      <option value="-6.0">(GMT -6:00) Central Time (US &amp; Canada), Mexico City</option>
+					      <option value="-5.0">(GMT -5:00) Eastern Time (US &amp; Canada), Bogota, Lima</option>
+					      <option value="-4.0">(GMT -4:00) Atlantic Time (Canada), Caracas, La Paz</option>
+					      <option value="-3.5">(GMT -3:30) Newfoundland</option>
+					      <option value="-3.0">(GMT -3:00) Brazil, Buenos Aires, Georgetown</option>
+					      <option value="-2.0">(GMT -2:00) Mid-Atlantic</option>
+					      <option value="-1.0">(GMT -1:00 hour) Azores, Cape Verde Islands</option>
+					      <option value="0.0">(GMT) Western Europe Time, London, Lisbon, Casablanca</option>
+					      <option value="1.0">(GMT +1:00 hour) Brussels, Copenhagen, Madrid, Paris</option>
+					      <option value="2.0">(GMT +2:00) Kaliningrad, South Africa</option>
+					      <option value="3.0">(GMT +3:00) Baghdad, Riyadh, Moscow, St. Petersburg</option>
+					      <option value="3.5">(GMT +3:30) Tehran</option>
+					      <option value="4.0">(GMT +4:00) Abu Dhabi, Muscat, Baku, Tbilisi</option>
+					      <option value="4.5">(GMT +4:30) Kabul</option>
+					      <option value="5.0">(GMT +5:00) Ekaterinburg, Islamabad, Karachi, Tashkent</option>
+					      <option value="5.5">(GMT +5:30) Bombay, Calcutta, Madras, New Delhi</option>
+					      <option value="5.75">(GMT +5:45) Kathmandu</option>
+					      <option value="6.0">(GMT +6:00) Almaty, Dhaka, Colombo</option>
+					      <option value="7.0">(GMT +7:00) Bangkok, Hanoi, Jakarta</option>
+					      <option value="8.0">(GMT +8:00) Beijing, Perth, Singapore, Hong Kong</option>
+					      <option value="9.0">(GMT +9:00) Tokyo, Seoul, Osaka, Sapporo, Yakutsk</option>
+					      <option value="9.5">(GMT +9:30) Adelaide, Darwin</option>
+					      <option value="10.0">(GMT +10:00) Eastern Australia, Guam, Vladivostok</option>
+					      <option value="11.0">(GMT +11:00) Magadan, Solomon Islands, New Caledonia</option>
+					      <option value="12.0">(GMT +12:00) Auckland, Wellington, Fiji, Kamchatka</option>
+					</select>
+					<div class="submit-btns">
+						<button type="submit" class="save-btn">Save</button>
+						<button type="submit" class="cancel-btn">Cancel</button>
 					</div>
 				</div>
-				<select name="DropDownTimezone" id="DropDownTimezone">
-					  <option value="" disabled selected hidden>Select Timezone</option>
-				      <option value="-12.0">(GMT -12:00) Eniwetok, Kwajalein</option>
-				      <option value="-11.0">(GMT -11:00) Midway Island, Samoa</option>
-				      <option value="-10.0">(GMT -10:00) Hawaii</option>
-				      <option value="-9.0">(GMT -9:00) Alaska</option>
-				      <option value="-8.0">(GMT -8:00) Pacific Time (US &amp; Canada)</option>
-				      <option value="-7.0">(GMT -7:00) Mountain Time (US &amp; Canada)</option>
-				      <option value="-6.0">(GMT -6:00) Central Time (US &amp; Canada), Mexico City</option>
-				      <option value="-5.0">(GMT -5:00) Eastern Time (US &amp; Canada), Bogota, Lima</option>
-				      <option value="-4.0">(GMT -4:00) Atlantic Time (Canada), Caracas, La Paz</option>
-				      <option value="-3.5">(GMT -3:30) Newfoundland</option>
-				      <option value="-3.0">(GMT -3:00) Brazil, Buenos Aires, Georgetown</option>
-				      <option value="-2.0">(GMT -2:00) Mid-Atlantic</option>
-				      <option value="-1.0">(GMT -1:00 hour) Azores, Cape Verde Islands</option>
-				      <option value="0.0">(GMT) Western Europe Time, London, Lisbon, Casablanca</option>
-				      <option value="1.0">(GMT +1:00 hour) Brussels, Copenhagen, Madrid, Paris</option>
-				      <option value="2.0">(GMT +2:00) Kaliningrad, South Africa</option>
-				      <option value="3.0">(GMT +3:00) Baghdad, Riyadh, Moscow, St. Petersburg</option>
-				      <option value="3.5">(GMT +3:30) Tehran</option>
-				      <option value="4.0">(GMT +4:00) Abu Dhabi, Muscat, Baku, Tbilisi</option>
-				      <option value="4.5">(GMT +4:30) Kabul</option>
-				      <option value="5.0">(GMT +5:00) Ekaterinburg, Islamabad, Karachi, Tashkent</option>
-				      <option value="5.5">(GMT +5:30) Bombay, Calcutta, Madras, New Delhi</option>
-				      <option value="5.75">(GMT +5:45) Kathmandu</option>
-				      <option value="6.0">(GMT +6:00) Almaty, Dhaka, Colombo</option>
-				      <option value="7.0">(GMT +7:00) Bangkok, Hanoi, Jakarta</option>
-				      <option value="8.0">(GMT +8:00) Beijing, Perth, Singapore, Hong Kong</option>
-				      <option value="9.0">(GMT +9:00) Tokyo, Seoul, Osaka, Sapporo, Yakutsk</option>
-				      <option value="9.5">(GMT +9:30) Adelaide, Darwin</option>
-				      <option value="10.0">(GMT +10:00) Eastern Australia, Guam, Vladivostok</option>
-				      <option value="11.0">(GMT +11:00) Magadan, Solomon Islands, New Caledonia</option>
-				      <option value="12.0">(GMT +12:00) Auckland, Wellington, Fiji, Kamchatka</option>
-				</select>
-				<div class="submit-btns">
-					<button type="submit" class="save-btn">Save</button>
-					<button type="submit" class="cancel-btn">Cancel</button>
-				</div>
-			</div>
-		</main>
-		
+			</main>
+		</div> <!-- End wrapper -->
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

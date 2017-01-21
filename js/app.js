@@ -32,6 +32,8 @@ const recentActivityData = [
 ];
 
 window.onload = function() {
+	notificationNumber();
+
 	showAlert.style.display = "block"; //To show alert
 	showTrafficHour.style.display = "block"; //To show hourly traffic line chart on pg load
 	//For social widget numbers
@@ -50,6 +52,20 @@ window.onload = function() {
     secondRecentActivity();
     thirdRecentActivity();
     fourthRecentActivity();
+};
+
+function notificationNumber() {
+	const randomNumber = Math.floor(Math.random() * 8);	// Number for notifications
+	const notifHolder = document.getElementsByClassName("notif-no")[0];
+	const notifHolder1 = document.getElementsByClassName("notif-no")[1];
+
+	if(randomNumber == 0) {
+		notifHolder.className = "hide";
+		notifHolder1.textContent = "0";
+	} else {
+		notifHolder.textContent = randomNumber;
+		notifHolder1.textContent = randomNumber;
+	}
 };
 
 function randomNumberT() {
