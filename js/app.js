@@ -42,6 +42,7 @@ window.onload = function() {
 	randomNumberG();
 	randomNumberSnap();
 	randomNumberPint();
+	randomNumberY();
 	//For new members
     firstNewMember();
     secondNewMember();
@@ -111,6 +112,15 @@ function randomNumberPint() {
     paragraphPint.className = "social-number";
     paragraphPint.textContent = randomNumber4;
     pintNumber.appendChild(paragraphPint);
+};
+
+function randomNumberY() {
+	const randomNumber5 = Math.floor(Math.random() * 11000); // Number for Snapchat
+	const yNumber = document.getElementById("yelp");	
+    const paragraphY = document.createElement("p");
+    paragraphY.className = "social-number";
+    paragraphY.textContent = randomNumber5;
+    yNumber.appendChild(paragraphY);
 };
 
 function firstNewMember() {

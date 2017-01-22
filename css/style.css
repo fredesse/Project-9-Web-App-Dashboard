@@ -61,6 +61,14 @@ textarea:focus {
 	cursor: pointer;
 }
 
+/* Float clearfix */
+
+.clearfix::after {
+	content: " ";
+	display: table;
+	clear: both;
+}
+
 /* HEADER STYLING */
 
 .main-header {
@@ -681,6 +689,49 @@ textarea:focus {
 	.traffic-duration h4:hover {
 		border-radius: none;
 	}
+
+	.col-2 {
+		width: 100%;
+		max-width: 969px;
+		margin: 0 auto;
+		border-bottom: 1px solid #b5b5b7;
+	}
+
+	.daily-traffic,
+	.mobile-users,
+	.message-user,
+	.settings {
+		width: 50%;
+		float: left;
+		border-bottom: none;
+	}
+
+	.daily-traffic {
+		border-right: 1px solid #b5b5b7;
+	}
+
+	.settings {
+		border-left: 1px solid #b5b5b7;
+	}
+
+	.social-widgets {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.social-icon {
+		width: 220px;
+	}
+
+	.recent-activity {
+		border-bottom: none;
+	}
+
+	select {
+		margin-top: 1.8em;
+	}
 }
 
 @media screen and (min-width: 1120px) {
@@ -701,6 +752,21 @@ textarea:focus {
 		max-width: 969px;
 	}
 
+	.new-members,
+	.recent-activity {
+		width: 50%;
+		float: left;
+		border-bottom: none;
+	}
+
+	.recent-activity {
+		border-left: 1px solid #b5b5b7;
+	}
+
+	.nm-list,
+	.ra-list {
+		height: 100px;
+	}
 }
 
 

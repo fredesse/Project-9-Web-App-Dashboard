@@ -164,7 +164,7 @@ var doughnutChart = new Chart(mobileUsers, {
     options: {
         legend: {
             display: true,
-            position: 'right'
+            position: 'top'
         }
     }
 });
