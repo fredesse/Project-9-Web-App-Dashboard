@@ -6,6 +6,7 @@
 		<title>Web app dashboard</title>
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/awesomplete.css">
 	</head>
 	<body>
 		<header>
@@ -333,7 +334,14 @@
 						<div>
 							<h3 class="widget-headline">Message users</h3>
 						</div>
-						<div id="message-user"></div>
+						<div id="message-user">
+							<datalist id="user-names">
+								<option>Diane Chambers</option>
+								<option>Larry Byrd</option>
+								<option>James Wood</option>
+								<option>Jon Oliver</option>
+							</datalist>
+						</div>
 					</div>
 					<div class="settings">
 						<div>
@@ -405,6 +413,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/awesomplete.js" async></script>
 		<script src="js/charts.js" type="text/javascript" charset="utf-8"></script>
 		
 	</body>

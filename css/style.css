@@ -22,6 +22,10 @@ h3 {
 	text-transform: uppercase;
 }
 
+h4 {
+	color: #848484;
+}
+
 a {
 	text-decoration: none;
 }
@@ -57,7 +61,7 @@ textarea:focus {
 .ui-menu-item:hover,
 .main-header:hover img,
 .alert img,
-.recent-activity .member-info:hover {
+.ra-list:hover {
 	cursor: pointer;
 }
 
@@ -123,6 +127,7 @@ textarea:focus {
 	margin-right: -9px;
 	z-index: 800;
 	position: relative;
+	top: -5px;
 }
 
 .icon-list {
@@ -311,14 +316,17 @@ textarea:focus {
 }
 
 .traffic-duration h4 {
-	color: #848484;
 	padding: 15px 10px;
 }
 
 .traffic-duration h4:hover {
 	cursor: pointer;
+	
+}
+
+.active {
 	background-color: #20b540;
-	color: #fff;
+	color: #ffffff;
 	border-radius: 20px;
 }
 
@@ -326,7 +334,9 @@ textarea:focus {
 
 .social-widgets {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
 .social-p {
@@ -345,6 +355,7 @@ textarea:focus {
 	padding-top: 1em;
 	padding-left: 1em;
 	margin-bottom: 2em;
+	width: 250px;
 }
 
 .icon-sizing {
@@ -453,9 +464,14 @@ textarea:focus {
 #search-user {
 	height: 2.5em;
 	margin-top: 1em;
-	padding-left: 15px;
-	padding-right: 15px;
 	color: #848484;
+	width: 100%;
+	padding: 0;
+	text-indent: 15px;
+}
+
+.awesomplete::-webkit-input-placeholder {
+	text-indent: 15px;
 }
 
 .message-user textarea {
@@ -512,7 +528,13 @@ textarea:focus {
 }
 
 /* AUTOCOMPLETE STYLING */
-.ui-menu {
+
+
+
+/*.awesomplete input {
+	width: 50%;
+}*/
+/*.ui-menu {
 	background-color: #fff;
 	border: 1px solid #b5b5b7;
 	border-radius: 5px;
@@ -525,7 +547,7 @@ textarea:focus {
 .ui-menu-item {
 	margin-top: 10px;
 	margin-bottom: 10px;
-}
+}*/
 
 /* STYLING FOR TOGGLE BUTTONS */
 
@@ -541,35 +563,53 @@ textarea:focus {
 }
 
 .onoffswitch {
-    position: relative; width: 90px;
-    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+    position: relative; 
+    width: 90px;
+    -webkit-user-select:none; 
+    -moz-user-select:none; 
+    -ms-user-select: none;
 }
 .onoffswitch-checkbox {
     display: none;
 }
 .onoffswitch-label {
-    display: block; overflow: hidden; cursor: pointer;
-    border: 2px solid #999999; border-radius: 20px;
+    display: block; 
+    overflow: hidden; 
+    cursor: pointer;
+    border: 2px solid #999999; 
+    border-radius: 20px;
 }
 .onoffswitch-inner {
-    display: block; width: 200%; margin-left: -100%;
+    display: block; 
+    width: 200%; 
+    margin-left: -100%;
     transition: margin 0.3s ease-in 0s;
 }
 .onoffswitch-inner:before, .onoffswitch-inner:after {
-    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
-    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    display: block; 
+    float: left; 
+    width: 50%; 
+    height: 30px; 
+    padding: 0; 
+    line-height: 30px;
+    font-size: 14px; 
+    color: white; 
+    font-family: Trebuchet, Arial, sans-serif; 
+    font-weight: bold;
     box-sizing: border-box;
 }
 .onoffswitch-inner:before {
     content: "ON";
     padding-left: 15px;
-    background-color: #8c7ded; color: #FFFFFF;
+    background-color: #8c7ded; 
+    color: #FFFFFF;
     text-align: left;
 }
 .onoffswitch-inner:after {
     content: "OFF";
     padding-right: 15px;
-    background-color: #EEEEEE; color: #999999;
+    background-color: #EEEEEE; 
+    color: #999999;
     text-align: right;
 }
 .onoffswitch-switch {
@@ -578,9 +618,12 @@ textarea:focus {
     height: 20px;
     margin: 6px;
     background: #FFFFFF;
-    position: absolute; top: 0; bottom: 0;
+    position: absolute; 
+    top: 0; 
+    bottom: 0;
     right: 56px;
-    border: 2px solid #999999; border-radius: 20px;
+    border: 2px solid #999999; 
+    border-radius: 20px;
     transition: all 0.3s ease-in 0s; 
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
@@ -594,13 +637,6 @@ textarea:focus {
 	margin-left: auto;
 	margin-top: .5em;
 }
-/*.forward {
-    SET THIS FOR DESKTOP
-	background: url(../icons/right-arrow.png);
-	height: 32px;
-	width: 32px;
-	margin-left: auto;
-}*/
 
 @media screen and (min-width: 768px) {
 
@@ -701,10 +737,6 @@ textarea:focus {
 		margin-left: 1em;
 	}
 
-	.traffic-duration h4:hover {
-		border-radius: none;
-	}
-
 	.col-2 {
 		width: 100%;
 		max-width: 969px;
@@ -729,24 +761,25 @@ textarea:focus {
 		border-left: 1px solid #b5b5b7;
 	}
 
-	.social-widgets {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: space-between;
-	}
-
-	.social-icon {
-		width: 250px;
-	}
-
 	.recent-activity {
 		border-bottom: none;
+	}
+
+	.forward {
+		background: url(../icons/right-arrow.png);
+		width: 32px;
+		height: 32px;
+		margin-top: 5px;
 	}
 
 	select {
 		margin-top: 1.8em;
 	}
+
+	.col-2:nth-child(7) {
+		border-bottom: none;
+	}
+
 }
 
 @media screen and (min-width: 1120px) {
@@ -781,6 +814,14 @@ textarea:focus {
 	.nm-list,
 	.ra-list {
 		height: 100px;
+	}
+
+	.ra-list p {
+		max-width: 278px;
+	}
+
+	#search-user {
+		width: 385.625px;
 	}
 }
 

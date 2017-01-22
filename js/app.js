@@ -36,6 +36,7 @@ window.onload = function() {
 
 	showAlert.style.display = "block"; //To show alert
 	showTrafficHour.style.display = "block"; //To show hourly traffic line chart on pg load
+	document.getElementById("hourly").className = "active";
 	//For social widget numbers
     randomNumberT();
     randomNumberFb();
@@ -48,7 +49,7 @@ window.onload = function() {
     secondNewMember();
     thirdNewMember();
     fourthNewMember();
-    //Recents activity
+    //Recent activity
     firstRecentActivity();
     secondRecentActivity();
     thirdRecentActivity();
@@ -60,14 +61,14 @@ function notificationNumber() {
 	const notifHolder = document.getElementsByClassName("notif-no")[0];
 	const notifHolder1 = document.getElementsByClassName("notif-no")[1];
 
-	if(randomNumber == 0) {
+	if(randomNumber === 0) {
 		notifHolder.className = "hide";
 		notifHolder1.textContent = "0";
 	} else {
 		notifHolder.textContent = randomNumber;
 		notifHolder1.textContent = randomNumber;
 	}
-};
+}
 
 function randomNumberT() {
 	const randomNumber = Math.floor(Math.random() * 11000);	// Number for Twitter
@@ -76,7 +77,7 @@ function randomNumberT() {
     paragraphT.className = "social-number";
     paragraphT.textContent = randomNumber;
     twitterNumber.appendChild(paragraphT);
-};
+}
 
 function randomNumberFb() {
 	const randomNumber1 = Math.floor(Math.random() * 11000); // Number for Facebook
@@ -85,7 +86,7 @@ function randomNumberFb() {
     paragraphFb.className = "social-number";
     paragraphFb.textContent = randomNumber1;
     facebookNumber.appendChild(paragraphFb);
-};
+}
 
 function randomNumberG() {
 	const randomNumber2 = Math.floor(Math.random() * 11); // Number for Google (let's be honest, nobody uses G+)
@@ -94,7 +95,7 @@ function randomNumberG() {
     paragraphG.className = "social-number";
     paragraphG.textContent = randomNumber2;
     googleNumber.appendChild(paragraphG);
-};
+}
 
 function randomNumberSnap() {
 	const randomNumber3 = Math.floor(Math.random() * 11000); // Number for Snapchat
@@ -103,7 +104,7 @@ function randomNumberSnap() {
     paragraphSnap.className = "social-number";
     paragraphSnap.textContent = randomNumber3;
     snapNumber.appendChild(paragraphSnap);
-};
+}
 
 function randomNumberPint() {
 	const randomNumber4 = Math.floor(Math.random() * 11000); // Number for Snapchat
@@ -112,7 +113,7 @@ function randomNumberPint() {
     paragraphPint.className = "social-number";
     paragraphPint.textContent = randomNumber4;
     pintNumber.appendChild(paragraphPint);
-};
+}
 
 function randomNumberY() {
 	const randomNumber5 = Math.floor(Math.random() * 11000); // Number for Snapchat
@@ -121,7 +122,7 @@ function randomNumberY() {
     paragraphY.className = "social-number";
     paragraphY.textContent = randomNumber5;
     yNumber.appendChild(paragraphY);
-};
+}
 
 function firstNewMember() {
 	const imgParent = document.getElementById("nm-img-1"); // Appending image to new member category
@@ -146,7 +147,7 @@ function firstNewMember() {
 	pDate.className = "date-color";
 	pDate.textContent = newMemberData[0][3];
 	dateParent.appendChild(pDate);
-};
+}
 
 function secondNewMember() {
 	const imgParent = document.getElementById("nm-img-2"); // Appending image to new member category
@@ -196,7 +197,7 @@ function thirdNewMember() {
 	pDate.className = "date-color";
 	pDate.textContent = newMemberData[2][3];
 	dateParent.appendChild(pDate);
-};
+}
 
 function fourthNewMember() {
 	const imgParent = document.getElementById("nm-img-4"); // Appending image to new member category
@@ -221,7 +222,7 @@ function fourthNewMember() {
 	pDate.className = "date-color";
 	pDate.textContent = newMemberData[3][3];
 	dateParent.appendChild(pDate);
-};
+}
 
 function firstRecentActivity() {
 	const imgParent = document.getElementById("ra-img-1"); // Appending image to new member category
@@ -242,7 +243,7 @@ function firstRecentActivity() {
     p2.textContent = timeAgo;
 	contentParent.className = "member-info";
     contentParent.appendChild(p2);
-};
+}
 
 function secondRecentActivity() {
 	const imgParent = document.getElementById("ra-img-2"); // Appending image to new member category
@@ -263,7 +264,7 @@ function secondRecentActivity() {
     p2.textContent = timeAgo;
 	contentParent.className = "member-info";
     contentParent.appendChild(p2);
-};
+}
 
 function thirdRecentActivity() {
 	const imgParent = document.getElementById("ra-img-3"); // Appending image to new member category
@@ -284,7 +285,7 @@ function thirdRecentActivity() {
     p2.textContent = timeAgo;
 	contentParent.className = "member-info";
     contentParent.appendChild(p2);
-};
+}
 
 function fourthRecentActivity() {
 	const imgParent = document.getElementById("ra-img-4"); // Appending image to new member category
@@ -305,7 +306,7 @@ function fourthRecentActivity() {
     p2.textContent = timeAgo;
 	contentParent.className = "member-info";
     contentParent.appendChild(p2);
-};
+}
 
 //Show and hide notifications menu
 notifications.addEventListener("click", (e) => {
@@ -324,6 +325,11 @@ hourlyBtn.addEventListener("click", (e) => {
 	showTrafficWeek.style.display = "none";
 	showTrafficMonth.style.display = "none";
 	showTrafficHour.style.display = "block";
+	
+	document.getElementById("daily").className = "";
+	document.getElementById("weekly").className = "";
+	document.getElementById("monthly").className = "";
+	document.getElementById("hourly").className = "active";
 });
 
 // Show daily traffic line chart
@@ -332,6 +338,11 @@ dailyBtn.addEventListener("click", (e) => {
 	showTrafficWeek.style.display = "none";
 	showTrafficMonth.style.display = "none";
 	showTrafficDay.style.display = "block";
+
+	document.getElementById("hourly").className = "";
+	document.getElementById("weekly").className = "";
+	document.getElementById("monthly").className = "";
+	document.getElementById("daily").className = "active";
 });
 
 // Show weekly traffic line chart
@@ -340,6 +351,11 @@ weeklyBtn.addEventListener("click", (e) => {
 	showTrafficDay.style.display = "none";
 	showTrafficMonth.style.display = "none";
 	showTrafficWeek.style.display = "block";
+	
+	document.getElementById("hourly").className = "";
+	document.getElementById("daily").className = "";
+	document.getElementById("monthly").className = "";
+	document.getElementById("weekly").className = "active";
 });
 
 // Show monthly traffic line chart
@@ -348,36 +364,22 @@ monthlyBtn.addEventListener("click", (e) => {
 	showTrafficDay.style.display = "none";
 	showTrafficWeek.style.display = "none";
 	showTrafficMonth.style.display = "block";
+	
+	document.getElementById("hourly").className = "";
+	document.getElementById("weekly").className = "";
+	document.getElementById("daily").className = "";
+	document.getElementById("monthly").className = "active";
 });
 
-// Search input field
+// Search user input field
 const messageUser = document.getElementById("message-user");
 const searchUser = document.createElement("input");
 searchUser.setAttribute("id", "search-user");
+searchUser.className = "awesomplete";
 searchUser.setAttribute("type", "search");
+searchUser.setAttribute("list", "user-names");
 searchUser.setAttribute("placeholder", "Search for User");
 messageUser.appendChild(searchUser);
-
-// Search autocomplete
-$(function() {
-	const availableTags = [
-      	[newMemberData[0][1]].toString(),
-		[newMemberData[1][1]].toString(),
-		[newMemberData[2][1]].toString(),
-		[newMemberData[3][1]].toString()
-    ];
-
-/*	const memberNames = [
-	[newMemberData[0][1]],
-	[newMemberData[1][1]],
-	[newMemberData[2][1]],
-	[newMemberData[3][1]],
-	];*/
-	$("#search-user").autocomplete({
-	source: availableTags
-	});
-});
-
 
 // Text area input field
 const writeToUser = document.createElement("textarea");
@@ -397,7 +399,7 @@ sendBtn.addEventListener("click", (e) => {
 	const nameInput = document.getElementById("search-user").value;
 	const textInput = document.getElementById("text-user").value;
 
-	if (nameInput == "" || textInput == "") {
+	if (nameInput === "" || textInput === "") {
 		const getParent = document.getElementById("message-user");
 		const errorMsg = document.createElement("p");
 		errorMsg.className = "error";
@@ -414,7 +416,6 @@ sendBtn.addEventListener("click", (e) => {
 		messageSent.appendChild(div);
 	}
 });
-
 
 
 
