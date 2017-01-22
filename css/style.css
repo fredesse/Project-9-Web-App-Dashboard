@@ -604,14 +604,26 @@ textarea:focus {
 
 @media screen and (min-width: 768px) {
 
+	html, body {
+		height: 100%;
+	}
+
+	.main-header {
+		position: fixed;
+		width: 100%;
+	}
+
 	.main {
 		width: calc(100% - 150px);
 		float: left;
+		margin-left: 150px;
 	}
 
 	.nav-header {
 		width: 150px;
-		height: 100vh;
+		height: calc(100vh - 96px);
+		position: fixed;
+		top: 96px;
 		float: left;
 		text-align: center;
 		padding: 0;
@@ -620,6 +632,8 @@ textarea:focus {
 	.icon-list {
 		display: flex;
 		flex-direction: column;
+		justify-content: flex-start;
+		height: 100%;
 	}
 
 	.icon-list li {
@@ -636,6 +650,7 @@ textarea:focus {
 	.flex-heading {
 		display: flex;
 		flex-direction: row-reverse;
+		margin-top: 96px;
 	}
 
 	.dashboard-heading {
@@ -722,7 +737,7 @@ textarea:focus {
 	}
 
 	.social-icon {
-		width: 220px;
+		width: 250px;
 	}
 
 	.recent-activity {
