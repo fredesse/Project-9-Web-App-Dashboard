@@ -12,11 +12,6 @@ const dailyBtn = document.getElementById("daily");
 const weeklyBtn = document.getElementById("weekly");
 const monthlyBtn = document.getElementById("monthly");
 
-const image = document.createElement("img");
-const pName = document.createElement("p");
-const pEmail = document.createElement("p");
-const pDate = document.createElement("p");
-
 const newMemberData = [
 	["img/diane.jpg", "Diane Chambers", "cheers@example.com", "10/15/16"],
 	["img/larry.jpg", "Larry Byrd", "go.celtics@example.com", "10/15/16"],
@@ -310,7 +305,7 @@ function fourthRecentActivity() {
 
 //Show and hide notifications menu
 notifications.addEventListener("click", (e) => {
-	const showMenu = document.getElementById("dropdown").classList.toggle("show");
+	document.getElementById("dropdown").classList.toggle("show");
 });
 
 //Hide alert notification
