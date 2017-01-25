@@ -527,28 +527,6 @@ textarea:focus {
 	margin-top: 2em;
 }
 
-/* AUTOCOMPLETE STYLING */
-
-
-
-/*.awesomplete input {
-	width: 50%;
-}*/
-/*.ui-menu {
-	background-color: #fff;
-	border: 1px solid #b5b5b7;
-	border-radius: 5px;
-	margin-right: 5%;
-	padding: 10px 15px;
-	color: #848484;
-	width: 40%;
-}
-
-.ui-menu-item {
-	margin-top: 10px;
-	margin-bottom: 10px;
-}*/
-
 /* STYLING FOR TOGGLE BUTTONS */
 
 .toggle-btns {
@@ -765,11 +743,24 @@ textarea:focus {
 		border-bottom: none;
 	}
 
-	.forward {
-		background: url(../icons/right-arrow.png);
+	.comment,
+	.like,
+	.signup {
 		width: 32px;
 		height: 32px;
 		margin-top: 5px;
+	}
+
+	.comment {
+		background: url(../icons/list.svg);
+	}
+
+	.like {
+		background: url(../icons/heart.svg);
+	}
+
+	.signup {
+		background: url(../icons/checked.svg);
 	}
 
 	select {

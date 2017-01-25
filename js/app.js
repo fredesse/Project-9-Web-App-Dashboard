@@ -310,8 +310,8 @@ notifications.addEventListener("click", (e) => {
 
 //Hide alert notification
 closeAlert.addEventListener("click", (e) => {
-	const tester = document.getElementById("alert");
-	tester.style.display = "none";
+	const closingAlert = document.getElementById("alert");
+	closingAlert.style.display = "none";
 });
 
 // Show daily traffic line chart
